@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tweets Analyzer</title>
+  <meta name="description" content="The Tweets Analyzer">
+  <meta name="author" content="MEC">
+  <link rel="stylesheet" href= "{{ url_for('static',filename='styles/results.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet">
+  <style>
+      body{
+        {% if category == "0" %}
+            background-color: #9cf196;
+        {% elif category == "1" %}
+            background-color: #fff8a6;
+        {% else %}
+            background-color: #ffba92;
+        {% endif %}
+      }
+  </style>
+</head>
+
+<body>
+        <section>
+                <div class ="text-wrapper">
+                    <div class="text-small">@{{username}}</div>
+                    <div class="text-large">
+                            {% if category == "0" %}
+                                <span>“The most beautiful moments in life are moments when you are expressing your joy, not when you are seeking it.”<br>-Sadhguru<span>
+                            {% elif category == "1" %}
+                                <span>"Instead of letting your hardships and failures discourage or exhaust you, let them inspire you. Let them make you even hungrier to succeed."<br>-Michelle Obama</span>
+                            {% else %}
+                                Strongly Concerning
+                            {% endif %} 
+                    </div>
+                    <h2> The category is 
+                            {% if category == "0" %}
+                                Safe to Ignore.
+                            {% elif category == "1" %}
+                                Concerning
+                            {% else %}
+                                Strongly Concerning
+                            {% endif %} 
+                        </h2>
+                    <a href="{{url_for('dashboard')}}"><button>More Details</button></a>
+                </div>
+            </section>
+    <script></script>
+</body>
+</html>

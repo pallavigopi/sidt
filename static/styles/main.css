@@ -1,0 +1,11 @@
+html{
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/geometric-leaves.png");
+}
+.center {
+    left: 50%;
+    margin: 0;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }

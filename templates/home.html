@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tweets Analyzer</title>
+  <meta name="description" content="The Tweets Analyzer">
+  <meta name="author" content="MEC">
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/home.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <section>
+        <div class ="text-wrapper">
+            <div class ="form-heading" >Please enter a twitter handle :)</div>
+            <form method="POST">
+                <input type="text" placeholder="Type here." name="username" id="username" aria-describedby="username">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </section>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

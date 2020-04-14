@@ -1,0 +1,54 @@
+html{
+    background-image: url('/static/images/bgfinal.png') ;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+
+section{
+    text-align: center;
+    padding: 35vh 30vw;
+}
+
+.text-wrapper{
+    text-align: left;
+    width: 40vw;
+}
+
+.form-heading{
+    font-size: 1.75rem;
+    color: rgba(8, 15, 99, 0.9);
+    font-family: 'Sen', sans-serif;
+}
+
+input[type=text]{
+    background: transparent;
+    border: none;
+    box-shadow: rgba(8, 15, 99, 0.5) 0px 2px;
+    padding: 3vh 0px 10px 0px;
+    font-size: 2rem;
+    outline: none;
+    line-height: normal;
+    width: 40vw;
+}
+
+input[type=submit] {
+    background: #d5f2e8;
+    border: none;
+    border-radius: 2px;
+    box-shadow: rgba(2, 2, 2) 10px 10px;
+    margin-top: 2vh;
+    padding: 10px 15px;
+    box-shadow: none;
+    width: auto;
+    font-size: 1.25rem;
+    font-family: 'Sen', sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: rgba(8, 15, 99, 0.733);
+}
+
+::placeholder{
+    color: rgba(8, 15, 99, 0.5);
+    font-family: 'Sen', sans-serif;
+}

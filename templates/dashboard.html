@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tweets Analyzer</title>
+  <meta name="description" content="The Tweets Analyzer">
+  <meta name="author" content="MEC">
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/dashboard.css') }}">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.counterup/1.0/jquery.counterup.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+
+<body>
+    <div class="heading-text" style="text-align:center">
+        <div><b>Detailed Analysis</b> @{{username}}</div>
+    </div>
+    <section>
+        <div class="display-graph"  width="770px" height="385px">
+            <!-- <img src="dummy.jpeg" alt="NO CHART"> -->
+            <canvas id="myChart" width="400" height="100" aria-label="Hello ARIA World" role="img"></canvas>
+        </div>
+        <div class="dashboard-details">
+            <div class="info-grid">
+                <div class="info-grid-item">
+                    <div class="counter counter-text">{{session['SAFE'] + session['CONCERN'] + session['HIGHCONCERN']}}</div>
+                    <div class="counter-description">Total Tweets</div>
+                    <div class="info-grid-item-image">
+                        <img src="./static/images/twitter.png" alt="">
+                    </div>
+                </div>
+                <div class="info-grid-item">
+                    <div class="counter counter-text">{{session['SAFE']}}</div>
+                    <div class="counter-description">Safe To Ignore</div>
+                    <div class="info-grid-item-image">
+                        <img src="./static/images/smile.png" alt="">
+                    </div>
+                </div>
+                <div class="info-grid-item">
+                    <div class="counter counter-text">{{session['CONCERN']}}</div>
+                    <div class="counter-description">Concerning</div>
+                    <div class="info-grid-item-image">
+                        <img src="./static/images/confused.png" alt="">
+                    </div>
+                </div>
+                <div class="info-grid-item">
+                    <div class="counter counter-text">{{session['HIGHCONCERN']}}</div>
+                    <div class="counter-description">Highly Concerning</div>
+                    <div class="info-grid-item-image">
+                        <img src="./static/images/sad.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class ="text-wrapper">
+                <!-- <p>@twitteruser</p>
+                <p>This is some more text. lets see what happens. Assume this is a message.</p> -->
+            </div>
+        </div>
+    </section>
+    <script>
+        $('.counter').counterUp({
+            delay: 5,
+            time: 1000
+        }); 
+    </script>
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Safe to Ignore', 'Concerning', 'Highly Concerning'],
+        datasets: [{
+            label: '# of Votes',
+            data: [{{session['SAFE']}} , {{session['CONCERN']}}, {{session['HIGHCONCERN']}}],
+            backgroundColor: [
+                '#57ecac',
+                'rgba(255, 206, 86, 1)',
+                'rgba(255, 99, 132, 1)' 
+            ],
+            borderColor: [
+                '#57ecac',
+                'rgba(255, 206, 86, 1)',
+                'rgba(255, 99, 132, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {}
+});
+    </script>
+</body>
+</html>

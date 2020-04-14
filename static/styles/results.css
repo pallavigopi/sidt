@@ -1,0 +1,42 @@
+body{
+    background-color: #f9d5dc80;
+    font-family: 'Sen', sans-serif;
+}
+
+section{
+    text-align: center;
+    padding: 30vh 20vw;
+}
+
+.text-wrapper{
+    text-align: left;
+    width: 60vw;
+}
+
+.text-small{
+    font-size: 1.5rem;
+    margin-bottom: 2vh;
+    color: rgba(0,0,0,0.6);
+}
+
+.text-large{
+    font-size: 2.5rem;
+    margin-bottom: 2vh;
+    color: rgba(0,0,0,0.8);
+}
+
+button{
+    background: rgba(255,255,255,0.9);
+    border: none;
+    border-radius: 2px;
+    box-shadow: rgba(2, 2, 2) 10px 10px;
+    margin-top: 2vh;
+    padding: 10px 15px;
+    box-shadow: none;
+    width: auto;
+    font-size: 1.25rem;
+    font-family: 'Sen', sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: rgba(8, 15, 99, 0.733);
+}
